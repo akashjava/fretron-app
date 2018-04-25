@@ -1,0 +1,12 @@
+<div  style="margin-top: 5px" >
+  <mat-form-field style="width: 100%" >
+    <input type="number" min="0"  matInput [(ngModel)]="mobileNo"
+           onkeydown="if(event.target.value.length>=10 && event.keyCode!=8 && event.keyCode!=13 )return false;"
+           pattern="[0-9]{10}" placeholder="{{'Enter Mobile Number'}}" name="mobileNo" id="mobileNo" required>
+  </mat-form-field>
+  {{mobileNo}}
+
+  <button  name="ok"  type="submit"  matTooltip="{{'ok'}}" (click)="login()" mat-button >
+    login
+  </button>
+</div>

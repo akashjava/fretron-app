@@ -1,0 +1,12 @@
+<div  style="margin-top: 5px" >
+  <div *ngIf="authState['loginInProgress']">Login In Progress</div>
+  <mat-form-field style="width: 100%" >
+    <input type="number" min="0"  matInput [(ngModel)]="otp"
+           onkeydown="if(event.target.value.length>=6 && event.keyCode!=8 && event.keyCode!=13 )return false;"
+           pattern="[0-9]{6}" placeholder="{{'Enter Otp Number'}}" name="otp" id="otp" required>
+  </mat-form-field>
+
+  <button  name="ok"  type="submit"  matTooltip="{{'send otp'}}" (click)="submitOtp()" mat-button >
+    SEND
+  </button>
+</div>
